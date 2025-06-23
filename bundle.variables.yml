@@ -1,0 +1,131 @@
+# Databricks Asset Bundle Variables
+# Configuration variables for Multimodal RAG Pipeline
+
+variables:
+  # Unity Catalog Configuration
+  catalog:
+    description: Unity Catalog name
+    default: colpali
+    
+  schema:
+    description: Schema name within the catalog
+    default: multimodal_rag
+    
+  rag_app_name:
+    description: RAG application name
+    default: bcp_confluence_documents_rag
+
+  # Volume Configuration  
+  volume_label:
+    description: Volume label for  model
+    default: colpali_model
+    
+  # volume_path:
+  #   description: Volume path for  model
+  #   default: /Volumes/filogzzdbcat/multimodal_rag/model
+    
+  pdf_volume_path:
+    description: Volume path for PDF documents
+    default: /Volumes/bcp/confluence_rag/confluence_docs
+
+  # Model Configuration
+  # model_name:
+  #   description:  model identifier
+  #   default: vidore/colpali-v1.3
+    
+  # model_registered_name:
+  #   description: Registered model name in Unity Catalog
+  #   default: filogzzdbcat.multimodal_rag.model
+    
+  # embedding_dimensions:
+  #   description:  embedding dimensions
+  #   default: 512
+    
+  endpoint_name:
+    description:  embeddingmodel endpoint name
+    default: model_embedding_generation
+
+  # LLM Configuration
+  llm_endpoint_name:
+    description: LLM endpoint name
+    default: https://fgbcpai.openai.azure.com/
+    
+  llm_temperature:
+    description: LLM temperature parameter
+    default: 0
+    
+  llm_max_tokens:
+    description: LLM max tokens parameter
+    default: 2000
+
+  # Azure OpenAI Configuration
+  azure_endpoint:
+    description: Azure OpenAI endpoint URL
+    default: https://fgbcpai.openai.azure.com/
+    
+  azure_api_version:
+    description: Azure OpenAI API version
+    default: 2025-01-01-preview
+    
+  azure_deployment_name:
+    description: Azure OpenAI deployment name
+    default: gbcpt-4o
+
+  # Vector Search Configuration
+  vector_search_endpoint_name:
+    description: Vector search endpoint name
+    default: vs_model_endpoint
+    
+  vector_search_index_name:
+    description: Vector search index name
+    default: vs_model_embedding_index
+    
+  vector_search_table_name:
+    description: Vector search table name
+    default: vs_model_embedding
+    
+  vector_search_k:
+    description: Number of search results to return
+    default: 5
+    
+  vector_search_query_type:
+    description: Vector search query type (ANN or HYBRID)
+    default: HYBRID
+
+  # Table Names
+  pdf_pages_table:
+    description: Table name for PDF pages
+    default: pdf_pages
+    
+  embeddings_table:
+    description: Table name for embeddings
+    default: model_embedding
+    
+  vector_index_table:
+    description: Table name for vector index
+    default: bcp_embedded_images_managed_index
+
+  # Data Pipeline Configuration
+  batch_size:
+    description: Batch size for processing
+    default: 10
+    
+  image_dpi:
+    description: DPI for image processing
+    default: 100
+    
+  image_format:
+    description: Image format
+    default: JPEG
+    
+  image_quality:
+    description: Image quality (1_100)
+    default: 70
+    
+  image_max_dimension:
+    description: Maximum image dimension
+    default: 1568
+    
+  image_max_megapixels:
+    description: Maximum megapixels for images
+    default: 1150000 
