@@ -124,7 +124,7 @@ base_config = {
     # Azure OpenAI Configuration (for GPT-4o)
     "azure_openai": {
         "endpoint": bundle_variables.get("azure_endpoint", "https://fgbcpai.openai.azure.com/"),
-        "api_key": os.environ.get("AZURE_OPENAI_API_KEY", "4XVOz4hDA0EFN9rnqVK0ui9PZfviVi826feunVNEoHG2a4viau5qJQQJ99BFACYeBjFXJ3w3AAABACOG2089"),
+        "api_key": os.environ.get("AZURE_OPENAI_API_KEY", ""),
         # Store in environment variable
         "api_version": bundle_variables.get("azure_api_version", "2025-01-01-preview"),
         "deployment_name": bundle_variables.get("azure_deployment_name", "gbcpt-4o"),
